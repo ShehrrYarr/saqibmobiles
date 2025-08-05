@@ -6,7 +6,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Al Zaitoon Traders</title>
+    <title>Saqib Mobiles</title>
     <link rel="icon" href="homepage_assets/img/AZT.png" src="homepage_assets/img/image1.jpg" type="image/x-icon">
 
 
@@ -76,20 +76,13 @@
             <div class="container header">
 
                 <a class="navbar-brand" href="/">
-                    Al Zaitoon<i class="version-number">Traders</i>
+                    Saqib<i class="version-number">Mobiles</i>
                     <!--
                             Custom Logo
                             <img src="homepage_assets/images/logo.svg" alt="Leverage">
                         -->
                 </a>
-                <a class="navbar-brand" href="/">
-                    Usman&Ali<i class="version-number">Mobiles</i>
-                    <!--
-                            Custom Logo
-                            <img src="homepage_assets/images/logo.svg" alt="Leverage">
-                        -->
-                </a>
-              
+                
 
                 <div class="ml-auto"></div>
 
