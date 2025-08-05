@@ -61,7 +61,7 @@ Route::post('/logout', [App\Http\Controllers\HomeController::class, 'logout'])->
 Route::get('/createmedia', [App\Http\Controllers\MediaController::class, 'index'])->name('createmedia');
 Route::post('/storemedia', [App\Http\Controllers\MediaController::class, 'store'])->name('storemedia');
 Route::get('/editmedia/{id}', [App\Http\Controllers\MediaController::class, 'edit'])->name('editmedia');
-Route::post('/updatemedia', [App\Http\Controllers\MediaController::class, 'update'])->name('updatecategory');
+// Route::post('/updatemedia', [App\Http\Controllers\MediaController::class, 'update'])->name('updatecategory');
 Route::get('/deletemedia/{id}', [App\Http\Controllers\MediaController::class, 'destroy'])->name('deletemedia');
 //Media Category Routes
 Route::get('/mediacategory', [App\Http\Controllers\MediaCategoryController::class, 'index'])->name('mediacategory');
