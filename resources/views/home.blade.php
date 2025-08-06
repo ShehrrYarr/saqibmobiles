@@ -102,10 +102,10 @@
                 <!-- Navbar Icons -->
                 <ul class="navbar-nav icons">
                     <li class="nav-item social">
-                        <a href="https://www.tiktok.com/@malikarshad999?_t=8cwQWucSZjG&_r=1" class="nav-link"><i class="bi bi-tiktok"></i></a>
+                        <a href="https://www.tiktok.com/@alikhokhar2222?_t=ZS-8yZo1AGjsN6&_r=1"></i></a>
                     </li>
                     <li class="nav-item social">
-                        <a href="https://www.facebook.com/Safdrmobshop" class="nav-link"><i class="icon-social-facebook"></i></a>
+                        <a href="https://www.facebook.com/share/1MCLU6RjLC/?mibextid=wwXIfr"></i></a>
                     </li>
                 </ul>
 
@@ -136,8 +136,7 @@
                     <div class="slide-content row" data-mask-768="80">
                         <div class="col-12 d-flex inner">
                             <div class="left align-self-center text-center text-md-left">
-                                <h1 data-aos="zoom-out-up" data-aos-delay="400" class="title effect-static-text">Al
-                                    Zaitoon Traders | Usman & Ali Mobiles</h1>
+                                <h1 data-aos="zoom-out-up" data-aos-delay="400" class="title effect-static-text">Saqib Mobiles</h1>
                                 <p data-aos="zoom-out-up" data-aos-delay="800" class="description">We are selling
                                     PTA,NON-PTA Iphones and Andriods at affordable prices</p>
                                 <a href="#" data-toggle="modal" data-target="#login"
@@ -300,7 +299,7 @@
                             <div class="branding col-12 p-3 text-center text-lg-left item">
                                 <div class="brand">
                                     <a href="/" class="logo">
-                                        Al Zaitoon Traders | Usman & Ali Mobiles
+                                       Saqib Mobiles
                                         <!--
                                                 Custom Logo
                                                 <img src="homepage_assets/images/logo.svg" alt="Leverage">
@@ -311,13 +310,13 @@
                                 <ul class="navbar-nav social share-list mt-0 ml-auto">
 
                                     <li class="nav-item">
-                                        <a href="https://www.facebook.com/Safdrmobshop" class="nav-link"><i class="icon-social-facebook"></i></a>
+                                        <a href="https://www.facebook.com/share/1MCLU6RjLC/?mibextid=wwXIfr"><i class="icon-social-facebook"></i></a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="https://www.tiktok.com/@malikarshad999?_t=8cwQWucSZjG&_r=1" class="nav-link"><i class="bi bi-tiktok"></i></a>
+                                        <a href="https://www.tiktok.com/@alikhokhar2222?_t=ZS-8yZo1AGjsN6&_r=1" class="nav-link"><i class="bi bi-tiktok"></i></a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="https://chat.whatsapp.com/DDm8P66zpd0HNPksncsRcJ" class="nav-link"><i class="bi bi-whatsapp"></i></a>
+                                        <a href="#" class="nav-link"><i class="bi bi-whatsapp"></i></a>
                                     </li>
                                 </ul>
                             </div>
@@ -349,16 +348,11 @@
                                     <li class="nav-item">
                                         <a href="#" class="nav-link">
                                             <i class="icon-phone mr-2"></i>
-                                           +923007852629
+                                          +923004557434
 
                                         </a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link">
-                                            <i class="icon-phone mr-2"></i>
-                                            +923075766855
-                                        </a>
-                                    </li>
+                                    
                                     <li class="nav-item">
                                         <a href="#" class="nav-link">
                                             <i class="icon-envelope mr-2"></i>
