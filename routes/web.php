@@ -12,6 +12,8 @@ use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\GroupController;
 use App\Http\Controllers\MobileNameController;
 use App\Http\Controllers\MobileController;
+use App\Http\Controllers\UserController;
+
 use App\Models\Group;
 use App\Models\Company;
 use App\Models\MobileName;
@@ -235,6 +237,14 @@ Route::get('/pendinginventory', function () {
         ->where('is_approve', 'Not_Approved')
         ->get();
     return view('pendinginventory', compact('mobile'));
+})->middleware('auth');
+
+Route::get('/deleteinventory', function () {
+
+    $mobile = Mobile::where('user_id', auth()->user()->id)->where('availability', 'Deleted')->where('is_transfer', false)
+        ->where('is_approve', 'Not_Approved')
+        ->get();
+    return view('deleteMobileInventory', compact('mobile'));
 })->middleware('auth');
 
 Route::get('/receivedpendinginventory', function () {
@@ -565,6 +575,7 @@ Route::get('/othertotalinventory/{id}', [App\Http\Controllers\MobileController::
 
 Route::get('/othersoldinventory/{id}', [App\Http\Controllers\MobileController::class, 'otherSoldInventory'])->name('othersoldinventory');
 Route::get('/otherpendinginventory/{id}', [App\Http\Controllers\MobileController::class, 'otherPendingInventory'])->name('otherpendinginventory');
+Route::get('/otherdeleteinventory/{id}', [App\Http\Controllers\MobileController::class, 'otherDeleteInventory'])->name('otherdeleteinventory');
 Route::get('/othertransferinventory/{id}', [App\Http\Controllers\MobileController::class, 'otherTransferInventory'])->name('otherTransferInventory');
 Route::get('/othertransfersoldinventory/{id}', [App\Http\Controllers\MobileController::class, 'otherTransferSoldInventory'])->name('otherTransferSoldInventory');
 Route::post('/mobiles/export', 'App\Http\Controllers\MobileController@exportMobiles')
@@ -599,4 +610,10 @@ Route::get('/mobiles/bulk-entry', [MobileController::class, 'bulkEntryForm'])->n
 Route::post('/mobiles/bulk-entry', [MobileController::class, 'bulkStore'])->name('mobiles.bulkStore');
 Route::get('/mobiles/check-imei', [MobileController::class, 'checkImei'])->name('mobiles.checkImei');
 Route::post('/mobiles/approve-bulk', [MobileController::class, 'approveBulk'])->name('approveBulkMobiles');
+
+//Manage user routes
+Route::get('/showusers', [UserController::class, 'showUsers'])->name('showusers');
+Route::post('/store-user', [UserController::class, 'store'])->name('storeUser');
+Route::get('/edituser/{id}', [UserController::class, 'editUser'])->name('editUser');
+Route::put('/update-user', [UserController::class, 'update'])->name('updateUser');
 

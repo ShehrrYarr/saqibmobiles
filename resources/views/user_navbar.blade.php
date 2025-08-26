@@ -128,6 +128,9 @@
                         <li class="@if (\Request::is('pendinginventory')) active @endif"><a class="menu-item"
                                 href="/pendinginventory" data-i18n="5 columns">Pending Inventory</a>
                         </li>
+                        <li class="@if (\Request::is('pendinginventory')) active @endif"><a class="menu-item"
+                                href="/deleteinventory" data-i18n="5 columns">Delete Inventory</a>
+                        </li>
                         <li class="@if(\Request::is('soldapprovedinventory')) active @endif"><a class="menu-item" href="/soldapprovedinventory" data-i18n="5 columns">Sold Approve Inventory</a>
                         </li>
                           <li class="@if (\Request::is('allinventory')) active @endif"><a class="menu-item"
@@ -135,7 +138,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class=" nav-item"><a href="#"><i class="feather icon-tv"></i><span class="menu-title" data-i18n="Templates">Transfer Inventory</span></a>
+                {{-- <li class=" nav-item"><a href="#"><i class="feather icon-tv"></i><span class="menu-title" data-i18n="Templates">Transfer Inventory</span></a>
                     <ul class="menu-content">
                         <li class="@if(\Request::is('receivedtoday')) active @endif"><a class="menu-item" href="/receivedtoday" data-i18n="1 columns">Received Today</a>
                         </li>
@@ -157,7 +160,7 @@
                         </li>
 
                     </ul>
-                </li>
+                </li> --}}
                  <li class=" nav-item"><a href="#"><i class="feather icon-tv"></i><span class="menu-title"
                             data-i18n="Templates">Restore Inventory</span></a>
                     <ul class="menu-content">
@@ -196,8 +199,11 @@
                         <li class="@if (\Request::is('otherpendinginventory')) active @endif"><a class="menu-item"
                                     href="/otherpendinginventory/{{ $data['user']->id }}" data-i18n="2 columns">Pending
                                     Inventory</a></li>
-                        <li class="@if(\Request::is('othertransferinventory')) active @endif"><a class="menu-item" href="/othertransferinventory/{{$data['user']->id}}" data-i18n="3 columns">Received Inventory</a></li>
-                        <li class="@if(\Request::is('othertransfersoldinventory')) active @endif"><a class="menu-item" href="/othertransfersoldinventory/{{$data['user']->id}}" data-i18n="4 columns">Sold Received Inventory</a></li>
+                        <li class="@if (\Request::is('otherdeleteinventory')) active @endif"><a class="menu-item"
+                                    href="/otherdeleteinventory/{{ $data['user']->id }}" data-i18n="2 columns">Delete
+                                    Inventory</a></li>
+                        {{-- <li class="@if(\Request::is('othertransferinventory')) active @endif"><a class="menu-item" href="/othertransferinventory/{{$data['user']->id}}" data-i18n="3 columns">Received Inventory</a></li>
+                        <li class="@if(\Request::is('othertransfersoldinventory')) active @endif"><a class="menu-item" href="/othertransfersoldinventory/{{$data['user']->id}}" data-i18n="4 columns">Sold Received Inventory</a></li> --}}
                     </ul>
                 </li>
             @endforeach
@@ -216,6 +222,10 @@
                                                 <li class="@if (\Request::is('showmobilenames')) active @endif"><a
                                                                 class="menu-item" href="/showmobilenames"
                                                                 data-i18n="1 columns">MobileNames</a>
+                                                </li>
+                                                 <li class="@if (\Request::is('showusers')) active @endif">
+                                                        <a class="menu-item" href="/showusers"
+                                                                data-i18n="1 columns">Manage Users</a>
                                                 </li>
 
                                         </ul>

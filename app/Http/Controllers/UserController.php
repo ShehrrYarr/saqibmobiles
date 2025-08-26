@@ -10,6 +10,8 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
+use Hash;
+
 
 class UserController extends Controller
 {
@@ -132,64 +134,70 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function showUsers()
     {
-        //
+        if (!in_array(auth()->id(), [6])) {
+            return redirect()->back()->with('danger', 'You cannot view this page.');
+        }
+
+        $users = User::all();
+
+        return view('showUsers', compact('users'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
+
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required|string|min:6',
+        ]);
+
+        User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'password_text' => $request->password,
+        ]);
+
+        return redirect()->back()->with('success', 'User added successfully.');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function editUser($id)
     {
-        //
+        $filterId = User::find($id);
+        // dd($filterId);
+        if (!$filterId) {
+
+            return response()->json(['message' => 'Id not found'], 404);
+        }
+
+        return response()->json(['result' => $filterId]);
+
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function update(Request $request)
     {
-        //
-    }
+        $request->validate([
+            'id' => 'required|exists:users,id',
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users,email,' . $request->id,
+            'password' => 'nullable|string|min:6', // Make password optional for update
+            'is_active' => 'nullable|boolean', // Validate the active status
+        ]);
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
+        $user = User::findOrFail($request->id);
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        $user->update([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => $request->password ? Hash::make($request->password) : $user->password, // Update password only if provided
+            'password_text' => $request->password,
+            'is_active' => $request->is_active, // Update the active status
+        ]);
+
+        return redirect()->back()->with('success', 'User updated successfully.');
     }
 }

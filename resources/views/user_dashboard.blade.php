@@ -7,6 +7,17 @@
             <div class="content-header row">
             </div>
             <div class="content-body">
+                 @if (session('success'))
+                    <div class="alert alert-success" id="successMessage">
+                        {{ session('success') }}
+                    </div>
+                @endif
+
+                @if (session('danger'))
+                    <div class="alert alert-danger" id="dangerMessage" style="color: red;">
+                        {{ session('danger') }}
+                    </div>
+                @endif
                 <!-- Grouped multiple cards for statistics starts here -->
                 <div class="row grouped-multiple-statistics-card">
                     <div class="col-12">

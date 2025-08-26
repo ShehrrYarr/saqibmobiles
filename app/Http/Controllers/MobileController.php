@@ -598,6 +598,16 @@ public function otherPendingInventory($id)
     return view('otherpendinginventory', ['mobileData' => $mobileData]);
 }
 
+public function otherDeleteinventory($id)
+{
+    $mobileData = Mobile::where('user_id', $id)
+    ->where('is_transfer', false)
+    ->where('availability', 'Deleted')->with('mobileName')
+    ->get();
+
+    return view('otherdeleteinventory', ['mobileData' => $mobileData]);
+}
+
 public function otherTransferInventory($id)
 {
     $mobileData = TransferRecord::with('fromUser', 'toUser', 'mobile')
@@ -644,11 +654,12 @@ public function otherTransferSoldInventory($id)
 
 public function destroy(Request $request)
 {
-    $filterId = Mobile::find($request->id);
+    $filterMobile = Mobile::find($request->id);
 
     // Check if the authenticated user ID is 2
     if (auth()->user()->id === 6) {
-        $filterId->delete();
+       $filterMobile->availability = 'Deleted';
+       $filterMobile->save();
         return redirect()->back()->with('success', 'Mobile Deleted Successfully');
     } else {
         return redirect()->back()->with('danger', "You can't delete the product.");

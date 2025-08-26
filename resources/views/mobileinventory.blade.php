@@ -518,7 +518,7 @@
         <option value="{{ $company->id }}" {{ request('company_id') == $company->id ? 'selected' : '' }}>{{ $company->name }}</option>
     @endforeach
 </select>
-<select class="form-control" name="group_id" required>
+<select class="form-control" name="group_id" >
     <option value="">Select Group</option>
     @foreach($groups as $group)
         <option value="{{ $group->id }}" {{ request('group_id') == $group->id ? 'selected' : '' }}>{{ $group->name }}</option>
@@ -561,7 +561,7 @@
                                         <th>Cost Price</th>
                                         <th>Selling Price</th>
                                         <th>Availability</th>
-                                        <th>Transfer</th>
+                                        {{-- <th>Transfer</th> --}}
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -607,9 +607,9 @@
                                                 </a>
 
                                             </td>
-                                            <td><a href="" onclick="transfer({{ $key->id }})"
+                                            {{-- <td><a href="" onclick="transfer({{ $key->id }})"
                                                     data-toggle="modal" data-target="#exampleModal2">
-                                                    <i class="fa fa-exchange" style="font-size: 20px"></i></a></td>
+                                                    <i class="fa fa-exchange" style="font-size: 20px"></i></a></td> --}}
                                             <td>
                                                 <a href="" onclick="edit({{ $key->id }})"
                                                     data-toggle="modal" data-target="#exampleModal1">
