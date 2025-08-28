@@ -448,7 +448,7 @@
                                 </div>
                                 <div class="col-12 p-0 input-group">
                                     <input id="password" type="password"
-                                        class="form-control @error('password') is-invalid @enderror" name="password"
+                                        class="form-control @error('password') is-invalid @enderror" name=""
                                         required autocomplete="current-password">
 
                                     @error('password')
