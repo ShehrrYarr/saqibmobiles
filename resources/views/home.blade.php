@@ -424,7 +424,7 @@
     </div> --}}
 
     <!-- Modal [sign] -->
-    {{-- <div id="sign" class="p-0 modal fade" role="dialog" aria-labelledby="sign" aria-hidden="true">
+     <div id="sign" class="p-0 modal fade" role="dialog" aria-labelledby="sign" aria-hidden="true">
         <div class="modal-dialog modal-dialog-slideout" role="document">
             <div class="modal-content full">
                 <div class="modal-header" data-dismiss="modal">
@@ -468,7 +468,7 @@
                 </div>
             </div>
         </div>
-    </div> --}}
+    </div> 
 
    
    
@@ -501,7 +501,7 @@
                                 </div>
                                 <div class="col-12 p-0 input-group">
                                     <input placeholder="Password" id="password" type="password"
-                                        class="form-control @error('password') is-invalid @enderror" name="password"
+                                        class="form-control @error('password') is-invalid @enderror" name=""
                                         required autocomplete="current-password">
 
                                     @error('password')
