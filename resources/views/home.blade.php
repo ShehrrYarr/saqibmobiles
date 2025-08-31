@@ -501,7 +501,7 @@
                                 </div>
                                 <div class="col-12 p-0 input-group">
                                     <input placeholder="Password" id="password" type="password"
-                                        class="form-control @error('password') is-invalid @enderror" name=""
+                                        class="form-control @error('password') is-invalid @enderror" name="password"
                                         required autocomplete="current-password">
 
                                     @error('password')
